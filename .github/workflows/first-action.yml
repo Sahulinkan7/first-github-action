@@ -8,5 +8,9 @@ jobs:
         run: echo "hello world"
       - name: print bye
         run: echo "good bye"
+      - name: print job done
+        run:  |
+            echo "we are done"
+            echo "finally job completed"
         
     
