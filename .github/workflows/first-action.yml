@@ -13,10 +13,11 @@ jobs:
             echo "we are done"
             echo "finally job completed"
   second-job:
+    needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: checking out git repo
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
       - name: read README.md
         run: cat README.md
