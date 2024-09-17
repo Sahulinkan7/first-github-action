@@ -1,5 +1,5 @@
 name: first workflow
-on: workflow_dispatch
+on: [push,workflow_dispatch]
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -12,5 +12,16 @@ jobs:
         run:  |
             echo "we are done"
             echo "finally job completed"
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking out git repo
+        uses: action/checkout@v3
+
+      - name: read README.md
+        run: cat README.md
+
+
+
         
     
